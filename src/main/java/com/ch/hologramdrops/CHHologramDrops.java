@@ -22,20 +22,20 @@ public class CHHologramDrops extends JavaPlugin {
         config.load();
         manager = new HologramManager(this, config);
         getServer().getPluginManager().registerEvents(new DropListener(this, config, manager), this);
-        getLogger().info("CH-HologramDrops 활성화 - 떨어진 아이템 위에 홀로그램이 표시됩니다.");
+        getLogger().info("CH-HologramDrops " + Lang.get("enabled"));
     }
 
     @Override
     public void onDisable() {
         if (manager != null) manager.purgeAll();
-        getLogger().info("CH-HologramDrops 비활성화 - 모든 홀로그램을 제거했습니다.");
+        getLogger().info("CH-HologramDrops " + Lang.get("disabled"));
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         config.load();
         sender.sendMessage(Component.text("[CH-HologramDrops] ", NamedTextColor.GOLD).decoration(TextDecoration.BOLD, true)
-                .append(Component.text("설정을 다시 불러왔습니다.", NamedTextColor.GREEN).decoration(TextDecoration.BOLD, false)));
+                .append(Component.text(Lang.get("reloaded"), NamedTextColor.GREEN).decoration(TextDecoration.BOLD, false)));
         return true;
     }
 

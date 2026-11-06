@@ -1,50 +1,88 @@
 # ============================================================
-#  CH-HologramDrops 설정
-#  글자 꾸미기는 MiniMessage 형식을 씁니다.
+#  CH-HologramDrops
+#  [KO] 글자 꾸미기는 MiniMessage 형식을 씁니다.
+#  [EN] Text styling uses the MiniMessage format.
+#  [ZH] 文字样式使用 MiniMessage 格式。
+#  [ES] El estilo del texto usa el formato MiniMessage.
 #  https://docs.advntr.dev/minimessage/format.html
 # ============================================================
 
-# ------ 홀로그램 표시 ------
+# ------ Language / 언어 / 语言 / Idioma ------
+# [KO] 콘솔 로그와 /hdreload 메시지 언어: ko, en, zh, es
+# [EN] Language of console logs and the /hdreload message: ko, en, zh, es
+# [ZH] 控制台日志和 /hdreload 提示的语言：ko, en, zh, es
+# [ES] Idioma de los registros de consola y del mensaje de /hdreload: ko, en, zh, es
+language: ko
 
-# 떨어진 아이템 위에 표시되는 형식
-#   <item>   : 아이템 이름 (직접 지은 이름이 있으면 그 이름, 없으면 기본 이름)
-#   <amount> : 개수
-# 예) "<gradient:gold:yellow><item></gradient> <gray>(x<amount>)"
+# ------ Hologram display / 홀로그램 표시 / 全息文字显示 / Visualización ------
+
+# [KO] 떨어진 아이템 위에 표시되는 형식. <item> = 아이템 이름, <amount> = 개수
+# [EN] Format shown above dropped items. <item> = item name, <amount> = stack size
+# [ZH] 显示在掉落物上方的格式。<item> = 物品名称，<amount> = 数量
+# [ES] Formato mostrado sobre los objetos soltados. <item> = nombre, <amount> = cantidad
+# e.g. "<gradient:gold:yellow><item></gradient> <gray>(x<amount>)"
 hologram-format: "<white><item> <gray>x<amount>"
 
-# true = 개수가 1개일 때는 "x1" 을 숨김
+# [KO] true = 개수가 1개일 때는 "x1" 을 숨김
+# [EN] true = hide "x1" when the stack size is 1
+# [ZH] true = 数量为 1 时隐藏 "x1"
+# [ES] true = oculta "x1" cuando la cantidad es 1
 hide-single-count: true
 
-# 아이템 위로 띄우는 높이(블록)
+# [KO] 아이템 위로 띄우는 높이(블록)
+# [EN] Height above the item (in blocks)
+# [ZH] 在物品上方的高度（方块）
+# [ES] Altura sobre el objeto (en bloques)
 hologram-height-offset: 0.75
 
-# 글자 배경색 (AARRGGBB). 완전 투명 = 00000000
+# [KO] 글자 배경색 (AARRGGBB). 완전 투명 = 00000000
+# [EN] Text background color (AARRGGBB). Fully transparent = 00000000
+# [ZH] 文字背景颜色（AARRGGBB）。完全透明 = 00000000
+# [ES] Color de fondo del texto (AARRGGBB). Totalmente transparente = 00000000
 text-background-color: "00000000"
 
-# 글자 크기 (작을수록 덜 거슬림)
+# [KO] 글자 크기 (작을수록 덜 거슬림)
+# [EN] Text scale (smaller = less obtrusive)
+# [ZH] 文字大小（越小越不显眼）
+# [ES] Tamaño del texto (más pequeño = menos intrusivo)
 text-scale: 1.0
 
-# 글자 그림자
+# [KO] 글자 그림자
+# [EN] Text shadow
+# [ZH] 文字阴影
+# [ES] Sombra del texto
 text-shadow: false
 
-# ------ 월드 ------
+# ------ Worlds / 월드 / 世界 / Mundos ------
 
-# 홀로그램을 표시할 월드 목록. 비우면 모든 월드
+# [KO] 홀로그램을 표시할 월드 목록. 비우면 모든 월드
+# [EN] Worlds where holograms are enabled. Leave empty for ALL worlds
+# [ZH] 启用全息文字的世界列表。留空 = 所有世界
+# [ES] Mundos con hologramas activados. Vacío = todos los mundos
 enabled-worlds: []
 
-# ------ 필터 ------
+# ------ Filters / 필터 / 过滤 / Filtros ------
 
-# 여기 적힌 아이템(재질 이름, 예: DIRT, DIAMOND_SWORD)은 홀로그램을 표시하지 않음
+# [KO] 여기 적힌 아이템(재질 이름, 예: DIRT, DIAMOND_SWORD)은 홀로그램을 표시하지 않음
+# [EN] Items listed here (material names, e.g. DIRT, DIAMOND_SWORD) get NO hologram
+# [ZH] 列在这里的物品（材质名称，如 DIRT、DIAMOND_SWORD）不会显示全息文字
+# [ES] Los objetos listados aquí (nombres de material, p. ej. DIRT, DIAMOND_SWORD) NO tendrán holograma
 blacklisted-materials: []
 #  - COBBLESTONE
 #  - DIRT
 
-# true = 이름을 직접 지은 아이템(이름표, 모루 등)만 홀로그램 표시
+# [KO] true = 이름을 직접 지은 아이템(이름표, 모루 등)만 홀로그램 표시 (바닐라 아이템은 표시 안 됨)
+# [EN] true = only items with a custom name (anvil, name tag, ...) get a hologram (vanilla items get none)
+# [ZH] true = 仅自定义名称的物品（铁砧、命名牌等）显示全息文字（原版物品不显示）
+# [ES] true = solo los objetos con nombre personalizado (yunque, etiqueta, ...) tienen holograma (los vanilla no)
 custom-names-only: false
 
-# ------ 아이템 이름 바꾸기 ------
+# ------ Item name overrides / 아이템 이름 바꾸기 / 物品名称覆盖 / Nombres personalizados ------
 
-# 특정 재질의 표시 이름을 바꿈 (MiniMessage 사용). 적지 않은 재질은 기본 이름 사용
-#  DIAMOND: "<aqua>다이아몬드"
-#  GOLDEN_APPLE: "<gold>황금 사과"
+# [KO] 특정 재질의 표시 이름을 바꿈 (MiniMessage 사용). 적지 않은 재질은 기본 이름 사용
+# [EN] Override the display name of specific materials (MiniMessage). Unlisted materials use the default name
+# [ZH] 覆盖特定材质的显示名称（MiniMessage）。未列出的材质使用默认名称
+# [ES] Cambia el nombre mostrado de materiales concretos (MiniMessage). Los no listados usan el nombre por defecto
+#  DIAMOND: "<aqua>Diamond"
+#  GOLDEN_APPLE: "<gold>Golden Apple"
 item-name-overrides: {}

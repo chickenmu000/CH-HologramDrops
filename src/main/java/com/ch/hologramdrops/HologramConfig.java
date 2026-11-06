@@ -45,6 +45,9 @@ public class HologramConfig {
         plugin.reloadConfig();
         FileConfiguration c = plugin.getConfig();
 
+        String lang = c.getString("language", "ko");
+        if (!Lang.set(lang)) plugin.getLogger().warning(Lang.get("bad-language", lang));
+
         formatTemplate = c.getString("hologram-format", "<white><item> <gray>x<amount>");
         hideSingleCount = c.getBoolean("hide-single-count", true);
         heightOffset = c.getDouble("hologram-height-offset", 0.75);
@@ -65,7 +68,7 @@ public class HologramConfig {
             try {
                 blacklistedMaterials.add(Material.valueOf(name.toUpperCase(Locale.ROOT)));
             } catch (IllegalArgumentException ex) {
-                plugin.getLogger().warning("blacklisted-materials 에 없는 재질입니다: " + name);
+                plugin.getLogger().warning(Lang.get("bad-material", name));
             }
         }
 
@@ -78,7 +81,7 @@ public class HologramConfig {
                 try {
                     nameOverrides.put(Material.valueOf(key.toUpperCase(Locale.ROOT)), sec.getString(key, ""));
                 } catch (IllegalArgumentException ex) {
-                    plugin.getLogger().warning("item-name-overrides 에 없는 재질입니다: " + key);
+                    plugin.getLogger().warning(Lang.get("bad-override", key));
                 }
             }
         }

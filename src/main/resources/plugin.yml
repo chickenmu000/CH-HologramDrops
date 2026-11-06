@@ -2,14 +2,14 @@ name: CH-HologramDrops
 main: com.ch.hologramdrops.CHHologramDrops
 version: 1.0
 api-version: '1.21'
-description: 바닥에 떨어진 아이템 위에 이름과 개수를 홀로그램으로 표시
+description: Shows the item name and amount as a hologram above dropped items (바닥에 떨어진 아이템 위에 이름과 개수를 홀로그램으로 표시)
 commands:
   hdreload:
-    description: CH-HologramDrops 설정 다시 불러오기
+    description: Reload the CH-HologramDrops configuration
     aliases: [hdr, holoreload]
     usage: /hdreload
     permission: chhologramdrops.reload
 permissions:
   chhologramdrops.reload:
-    description: 설정 리로드
+    description: Allows reloading the configuration
     default: op
