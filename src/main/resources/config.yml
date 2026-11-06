@@ -1,0 +1,50 @@
+# ============================================================
+#  CH-HologramDrops 설정
+#  글자 꾸미기는 MiniMessage 형식을 씁니다.
+#  https://docs.advntr.dev/minimessage/format.html
+# ============================================================
+
+# ------ 홀로그램 표시 ------
+
+# 떨어진 아이템 위에 표시되는 형식
+#   <item>   : 아이템 이름 (직접 지은 이름이 있으면 그 이름, 없으면 기본 이름)
+#   <amount> : 개수
+# 예) "<gradient:gold:yellow><item></gradient> <gray>(x<amount>)"
+hologram-format: "<white><item> <gray>x<amount>"
+
+# true = 개수가 1개일 때는 "x1" 을 숨김
+hide-single-count: true
+
+# 아이템 위로 띄우는 높이(블록)
+hologram-height-offset: 0.75
+
+# 글자 배경색 (AARRGGBB). 완전 투명 = 00000000
+text-background-color: "00000000"
+
+# 글자 크기 (작을수록 덜 거슬림)
+text-scale: 1.0
+
+# 글자 그림자
+text-shadow: false
+
+# ------ 월드 ------
+
+# 홀로그램을 표시할 월드 목록. 비우면 모든 월드
+enabled-worlds: []
+
+# ------ 필터 ------
+
+# 여기 적힌 아이템(재질 이름, 예: DIRT, DIAMOND_SWORD)은 홀로그램을 표시하지 않음
+blacklisted-materials: []
+#  - COBBLESTONE
+#  - DIRT
+
+# true = 이름을 직접 지은 아이템(이름표, 모루 등)만 홀로그램 표시
+custom-names-only: false
+
+# ------ 아이템 이름 바꾸기 ------
+
+# 특정 재질의 표시 이름을 바꿈 (MiniMessage 사용). 적지 않은 재질은 기본 이름 사용
+#  DIAMOND: "<aqua>다이아몬드"
+#  GOLDEN_APPLE: "<gold>황금 사과"
+item-name-overrides: {}
